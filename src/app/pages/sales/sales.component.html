@@ -1,0 +1,37 @@
+<app-home></app-home>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Criação</th>
+        <th>Valor</th>
+        <th>Pagamento</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td>{{ sale.id }}</td>
+        <td>{{ sale.created_at }}</td>
+        <td>{{ sale.value }}</td>
+        <td>{{ sale.paymentType }}</td>
+        <td>{{ sale.status }}</td>
+        <button
+          *ngIf="sale.status !== 'Pago' && sale.status !== 'Cancelado'"
+          style="color: red; margin-right: 40px; margin-left: 50px"
+          (click)="cancelSale(sale)"
+        >
+          Cancelar
+        </button>
+        <button
+          *ngIf="sale.status !== 'Cancelado' && sale.status !== 'Pago'"
+          style="color: green"
+          (click)="paidSale(sale.id)"
+        >
+          Dar baixa
+        </button>
+      </tr>
+    </tbody>
+  </table>
+</div>

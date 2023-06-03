@@ -1,0 +1,25 @@
+<app-home></app-home>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Maker</th>
+        <th>Assurance</th>
+        <th>Quantity</th>
+        <th>Barcode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of stockItems">
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.maker }}</td>
+        <td>{{ product.assurance }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.barcode }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,59 @@
+<app-home></app-home>
+<div class="container">
+  <h1>Cadastrar Venda</h1>
+  <div class="form-container">
+    <form #myForm="ngForm">
+      <div>
+        <label for="cpf">CPF:</label>
+        <input
+          placeholder="Digite um existente"
+          type="text"
+          id="cpf"
+          name="cpf"
+          required
+          [(ngModel)]="user.cpf"
+          mask="000.000.000-00 || 00.000.000/0000-00"
+        />
+        <button style="margin-bottom: 10px" (click)="getUser()">
+          🔍 Cliente
+        </button>
+      </div>
+      <input
+        placeholder="Nome do cliente"
+        type="text"
+        id="name"
+        name="name"
+        required
+        [(ngModel)]="user.name"
+        readonly
+      />
+      <label for="productName">Nome do Produto</label>
+      <select [(ngModel)]="formData.productName">
+        <option *ngFor="let product of products" [value]="product.name">
+          {{ product.name }}
+        </option>
+      </select>
+      <label for="status">Status</label>
+      <select [(ngModel)]="formData.status">
+        <option value="Cancelado">Cancelar</option>
+        <option value="Pago">Pago</option>
+        <option value="Aguardando pagamento">Aguardando pagamento</option>
+      </select>
+      <label for="paymentType">Tipo de Pagamento</label>
+      <select [(ngModel)]="formData.paymentType">
+        <option value="Boleto">Boleto</option>
+        <option value="Cartão de crédito">Cartão de crédito</option>
+        <option value="Pix">Pix</option>
+      </select>
+      <label for="value">Valor</label>
+      <input
+        style="margin-bottom: 10px"
+        type="number"
+        id="value"
+        name="value"
+        [(ngModel)]="formData.value"
+      /><br />
+      <input type="submit" (click)="submitForm()" value="Enviar" />
+    </form>
+  </div>
+</div>

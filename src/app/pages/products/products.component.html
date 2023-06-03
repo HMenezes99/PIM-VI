@@ -1,0 +1,70 @@
+<app-home></app-home>
+<div class="main-container">
+  <h1>Cadastro de Produto</h1>
+  <form class="product-form" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="product.name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="category">Categorias:</label>
+      <select
+        id="category"
+        name="category"
+        [(ngModel)]="product.category"
+        required
+      >
+        <option value="geek">Geek</option>
+        <option value="accessory">Acessórios</option>
+        <option value="games">Jogos</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="maker">Fabricante:</label>
+      <input
+        type="text"
+        id="maker"
+        name="maker"
+        [(ngModel)]="product.maker"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="assurance">Garantia:</label>
+      <input
+        type="number"
+        id="assurance"
+        name="assurance"
+        [(ngModel)]="product.assurance"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantidade:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        [(ngModel)]="product.quantity"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="barcode">Código de Barras:</label>
+      <input
+        type="text"
+        id="barcode"
+        name="barcode"
+        [(ngModel)]="product.barcode"
+        required
+      />
+    </div>
+    <button type="submit">Registrar</button>
+  </form>
+</div>

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.container button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}

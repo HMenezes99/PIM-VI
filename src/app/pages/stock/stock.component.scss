@@ -1,0 +1,13 @@
+div {
+  display: flex;
+  justify-content: center;
+  table {
+    border: 1px #000000 solid;
+    width: 80%;
+    td {
+      border: 1px #ccc solid;
+      text-align: center;
+      max-height: 2vh;
+    }
+  }
+}
