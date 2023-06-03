@@ -28,11 +28,13 @@ export class SalesComponent implements OnInit {
     this.sales = response;
   }
 
-  public paidSale(id: string) {
-    this.saleService.paidSale(id);
+  public async paidSale(id: string) {
+   await this.saleService.paidSale(id);
+   location.reload()
   }
 
-  public cancelSale(sale: ISale) {
-    this.saleService.cancelSale(sale);
+  public async cancelSale(sale: ISale) {
+    await this.saleService.cancelSale(sale);
+  location.reload()
   }
 }
